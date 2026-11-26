@@ -1,0 +1,16 @@
+[build]
+  # Static files (bosh sahifa) shu papkadan beriladi
+  publish = "public"
+  # Serverless funksiyalar
+  functions = "netlify/functions"
+
+# /api manzilini netlify/functions/api.mjs funksiyasiga yo'naltirish
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
